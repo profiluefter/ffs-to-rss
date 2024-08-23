@@ -1,0 +1,17 @@
+{
+	"+p_xml": "version=\"1.0\" encoding=\"UTF-8\" ",
+	"rss": {
+		"+@version": "2.0",
+		"channel": {
+			"title": "FFS to RSS",
+			"description": "Tabs from your Firefox Sync",
+			"link": "https://github.com/profiluefter/ffs-to-rss",
+			"item": map_values({
+				"title": .title,
+				"link": .urlHistory,
+				"description": .client_name,
+				"pubDate": .lastUsed_unix | from_unix | format_datetime("Mon, 02 Jan 2006 15:04:05 -0700")
+			})
+		}
+	}
+}
