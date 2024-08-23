@@ -11,4 +11,4 @@ PORT=${2:-1234}
 echo "Starting server on port ${PORT} for device ${DEVICE_ID}..."
 
 socat -v "TCP-LISTEN:${PORT},crlf,reuseaddr,fork" \
-  SYSTEM:"echo HTTP/1.0 200; echo Content-Type\: application/rss+xml; echo; ./generate-rss.sh ${DEVICE_ID}"
+  SYSTEM:"echo HTTP/1.0 200; echo Content-Type\: application/rss+xml; echo; generate-rss.sh ${DEVICE_ID}"
